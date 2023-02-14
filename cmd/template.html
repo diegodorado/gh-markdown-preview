@@ -2,8 +2,8 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {{ $cssURL :=
-    "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown.min.css" }} {{
-    if eq .Mode "dark" }} {{ $cssURL =
+    "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown.min.css"
+    }} {{ if eq .Mode "dark" }} {{ $cssURL =
     "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown-dark.min.css"
     }} {{ else if eq .Mode "light" }} {{ $cssURL =
     "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown-light.min.css"
@@ -39,20 +39,23 @@
     </style>
   </head>
   <body>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
     <script>
       MathJax = {
         tex: {
           inlineMath: [
-            ['$', '$'],
-            ['\\(', '\\)'],
+            ["$", "$"],
+            ["\\(", "\\)"],
           ],
           displayMath: [
-            ['$$', '$$'],
-            ['\\[', '\\]'],
+            ["$$", "$$"],
+            ["\\[", "\\]"],
           ],
         },
-      }
+      };
     </script>
     <script
       type="text/javascript"
@@ -107,6 +110,16 @@
         }
         loadmd();
       })()
+    </script>
+    <pre class="mermaid">
+  graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+    </pre>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
     </script>
     <article id="markdown-body" class="markdown-body"></article>
   </body>
